@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto&display=swap');
+
+:root {
+    --col-light: #fff;
+    --col-dark: rgb(40, 40, 40);
+    --col-accent: blue;
+    --font-primary:'Roboto', sans-serif;
+    --font-accent:'Libre Baskerville', serif;
+}
+
+*,
+* ::after,
+* ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--col-dark)
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-family: var(--font-accent);
+    color: var(--col-dark);
+    margin: 0.5rem auto;
+}
+
+h1 {
+    font-size: 2.7rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 1rem 12rem;
+}
+
+.movie-wrapper {
+    margin: 0 10rem;
+    padding: 1rem 5rem;
+    border: solid 2px #343A40;
+    border-radius: 10px;
+}
+
+.poster-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px); /* grid auto wrap */
+    justify-content: center;
+    text-align: center;
+}
+
+.poster-item {
+    width: 100%;
+    object-fit: cover;
+    margin: 1rem 0;
+}

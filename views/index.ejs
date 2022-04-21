@@ -1,0 +1,14 @@
+<%- include ('./partials/header'); %>
+
+    <h1>Welcome to the movie app!</h1>
+    <div class="poster-container">
+        <% for (let i=0; i < movies.length; i++){ %>
+            <div class="poster-item">
+                <img src="<%= movies[i].poster %>" alt="poster-img"> 
+                <p><%= movies[i].title %></p>
+                <a href="/movies/<%=movies[i]._id%>">Read more</a>
+            </div>
+            <% } %>
+    </div>
+
+    <%- include ('./partials/footer'); %>
