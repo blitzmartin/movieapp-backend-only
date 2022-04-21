@@ -19,7 +19,7 @@ const createUser = async (req, res) =>{
             username: req.body.username, 
             password: hashedPassword 
         });
-        res.send('Successfully logged in');
+        res.send('Registered User');
     } catch (err) {
         console.log(err)
     }
