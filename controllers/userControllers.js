@@ -5,7 +5,7 @@ const moviesModel = require("../models/moviesModel");
 function showUserIndex (req, res) {
   moviesModel.find({})
   .then(data => {
-    res.render('user-home', {movies: data, name: req.user.username}); 
+    res.json(data, req.user); 
   })
   .catch((err)=>{
     console.log(err);
@@ -17,7 +17,7 @@ function showUserIndex (req, res) {
 function showWatchlist (req, res) {
   moviesModel.find({})
   .then(data => {
-    res.render('watchlist', {movies: data}); 
+    res.json(data); 
   })
   .catch((err)=>{
     console.log(err);
@@ -27,7 +27,7 @@ function showWatchlist (req, res) {
 
 // Adds movie to watchlist
 const addToWatchlist = function (req, res) {
-  res.redirect('/user/watchlist') //only for testing reason
+  res.send('WATCHLIST PAGE') //only for testing reason
 }
 
 
@@ -36,7 +36,8 @@ const deleteFromWatchlist = function (req, res) {
   watchlistModel.findByIdAndRemove({_id: req.params.id})
   .then(data => {
       if(!err) {
-          res.redirect('/user/watchlist');
+        res.json(data);
+        res.send('WATCHLIST PAGE');
       }
   })
   .catch((err)=>{

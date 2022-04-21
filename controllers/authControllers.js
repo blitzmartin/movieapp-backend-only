@@ -7,7 +7,7 @@ initialize(passport);
 
 // Loads registration page
 async function showRegister (req, res) {
-    res.render('register');
+    res.send('REGISTER PAGE');
 };
 
 
@@ -19,7 +19,7 @@ const createUser = async (req, res) =>{
             username: req.body.username, 
             password: hashedPassword 
         });
-        res.render('success');
+        res.send('Successfully logged in');
     } catch (err) {
         console.log(err)
     }
@@ -27,7 +27,7 @@ const createUser = async (req, res) =>{
 
 // Loads login page
 const showLogin = function (req, res) {
-    res.render('login');
+    res.send('LOGIN PAGE');
 }
 
 // Checks if user has an account and if the password is correct

@@ -4,7 +4,7 @@ const moviesModel = require("../models/moviesModel");
 function showHomepage (req, res) {
   moviesModel.find({})
   .then(data => {
-    res.render('index', {movies: data}); 
+    res.json(data); 
   })
   .catch((err)=>{
     console.log(err);
@@ -17,14 +17,7 @@ function showHomepage (req, res) {
 const showOneMovie = function (req, res) {
   moviesModel.findOne({_id: req.params.id}) 
   .then(data => {
-    res.render('one-movie', {
-      title: data.title,
-      poster: data.poster,
-      year: data.year,
-      rating: data.rating,
-      category: data.category,
-      plot: data.plot
-    });
+    res.json(data);
   })
   .catch((err)=>{
     console.log(err);
@@ -35,7 +28,7 @@ const showOneMovie = function (req, res) {
 const showCategory = function (req, res) {
   moviesModel.find({category: req.params.category}) 
   .then(data => {
-    res.render('categories', {movies: data});
+    res.json(data);
   })
   .catch((err)=>{
     console.log(err);
