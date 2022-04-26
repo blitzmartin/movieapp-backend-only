@@ -54,7 +54,7 @@ app.use('/auth', authRouter);
 app.use('/user', userRouter);
 
 // Server running
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const hostname = 'localhost';
 
 app.listen(port, hostname, (err) =>{
