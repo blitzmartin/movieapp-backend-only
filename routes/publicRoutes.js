@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const publicControllers = require('../controllers/publicControllers')
 
-router.get('/', isNotLoggedIn, publicControllers.showHomepage);
+router.get('/movies', isNotLoggedIn, publicControllers.showHomepage);
 router.get('/movies/:id', isNotLoggedIn, publicControllers.showOneMovie);
 router.get('/categories/:category', isNotLoggedIn, publicControllers.showCategory);
 
